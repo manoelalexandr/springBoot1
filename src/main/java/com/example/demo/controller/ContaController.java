@@ -36,6 +36,7 @@ public class ContaController {
     }
 
     @PutMapping (path = "{id}")
+    @RequestMapping("/deposito")
     public Conta deposito (@PathVariable("id") Long id, @RequestBody double valor){
         return contaService.deposito(id, valor);
     }
