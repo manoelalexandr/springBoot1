@@ -40,14 +40,15 @@ public class ClienteService {
         return clienteRepository.findById(id);
     }
 
-    public Cliente deleteCliente(Long id){
+    public Cliente deleteCliente(Long id) {
 
-        Optional<Cliente> toDelete =selectById(id);
+        Optional<Cliente> toDelete = selectById(id);
         if(toDelete.isEmpty())
             return null;
-    clienteRepository.delete(toDelete.get());
 
-    return toDelete.get();
+        clienteRepository.delete(toDelete.get());
+
+        return toDelete.get();
     }
 
     public Cliente updateCliente(Long id, Cliente novo) {
